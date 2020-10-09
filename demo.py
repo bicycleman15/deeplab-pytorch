@@ -21,6 +21,7 @@ from omegaconf import OmegaConf
 from libs.models import *
 from libs.utils import DenseCRF
 
+# matplotlib.use('TKAgg', force=True)
 
 def get_device(cuda):
     cuda = cuda and torch.cuda.is_available()
@@ -177,7 +178,7 @@ def single(config_path, model_path, image_path, cuda, crf):
         ax.axis("off")
 
     plt.tight_layout()
-    plt.show()
+    plt.savefig('output.png')
 
 
 @main.command()
